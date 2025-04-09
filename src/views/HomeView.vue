@@ -44,8 +44,9 @@ export default {
   },
   methods: {
     getLatestProducts() {
+      const backendUrl = process.env.URL_BE;
       axios
-        .get("/api/v1/latest-products/")
+        .get(`${backendUrl}/api/v1/latest-products/`)
         .then((response) => {
           this.latestProducts = response.data;
         })

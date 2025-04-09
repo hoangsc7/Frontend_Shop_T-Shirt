@@ -150,6 +150,7 @@ export default {
 
     if (this.cartTotalLength > 0) {
       this.stripe = Stripe(process.env.STRIPE_PUBLIC_KEY);
+      console.log("Stripe public key:", process.env.STRIPE_PUBLIC_KEY);
       const elements = this.stripe.elements();
       this.card = elements.create("card", {
         hidePostalCode: true,
